@@ -29,12 +29,12 @@ jobs:
       - name: Rename APK
         run: |
           mkdir -p out
-          cp app/build/outputs/apk/release/app-release.apk out/NojumGuide-${{ github.run_number }}.apk
+          cp app/build/outputs/apk/release/app-release.apk out/AsemanNama-${{ github.run_number }}.apk
 
       - name: Upload APK (artifact)
         uses: actions/upload-artifact@v4
         with:
-          name: NojumGuide-apk
+          name: AsemanNama-apk
           path: out/*.apk
 
       - name: Publish release with APK
@@ -42,5 +42,5 @@ jobs:
         with:
           tag_name: build-${{ github.run_number }}
           name: نسخه ${{ github.run_number }}
-          body: فایل APK برنامه راهنمای مسابقات نجوم. برای نصب، فایل را روی گوشی اندرویدی دانلود و باز کنید.
+          body: فایل APK برنامه آسمان‌نما (راهنمای مسابقات نجوم و فناوری‌های فضایی). برای نصب، فایل را روی گوشی اندرویدی دانلود و باز کنید.
           files: out/*.apk
